@@ -1,21 +1,33 @@
+// frontend-user/vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3001,
+    port: 3002,
     proxy: {
       '/api': {
-        target: process.env.VITE_API_URL || 'http://localhost:8000',
+        target: 'http://localhost:8000',
         changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path,
       },
       '/uploads': {
-        target: (process.env.VITE_API_URL || 'http://localhost:8000').replace('/api', ''),
+        target: 'http://localhost:8000',
         changeOrigin: true,
-        secure: false,
+      }
+    }
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'terser',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          icons: ['react-icons'],
+          utils: ['axios', 'date-fns', 'react-hot-toast']
+        }
       }
     }
   }
