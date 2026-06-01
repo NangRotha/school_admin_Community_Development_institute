@@ -28,9 +28,10 @@ const SchoolSettings = () => {
     try {
       const response = await api.get('/school/info');
       setSchoolInfo(response.data);
-      if (response.data.logo) {
-        setLogoPreview(`${import.meta.env.VITE_API_URL.replace('/api', '')}${response.data.logo}`);
-      }
+       if (response.data.logo) {
+         const apiBaseUrl = import.meta.env.VITE_API_URL || 'https://school-backend-community-development.onrender.com/api';
+         setLogoPreview(`${apiBaseUrl.replace('/api', '')}${response.data.logo}`);
+       }
     } catch (error) {
       toast.error('Failed to fetch school info');
     } finally {

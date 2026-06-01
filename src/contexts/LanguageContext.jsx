@@ -72,6 +72,8 @@ export const translations = {
     oldPassword: 'Old Password',
     newPassword: 'New Password',
     confirmPassword: 'Confirm Password',
+    ContactMessages: 'Contact Messages',
+    AboutPage: 'About Page',
   },
   kh: {
     // Common
@@ -134,6 +136,8 @@ export const translations = {
     newPassword: 'ពាក្យសម្ងាត់ថ្មី',
     confirmPassword: 'បញ្ជាក់ពាក្យសម្ងាត់',
     contact: 'ទំនាកទំនង',
+    ContactMessages: 'សារទំនាក់ទំនង',
+    AboutPage: 'អំពីប្រវត្តិសាលា',
   }
 };
 

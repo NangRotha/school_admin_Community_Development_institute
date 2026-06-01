@@ -19,7 +19,7 @@ const TeacherForm = ({ teacher, onClose, onSuccess }) => {
     image: teacher?.image || ''
   });
   const [imageFile, setImageFile] = useState(null);
-  const [preview, setPreview] = useState(teacher?.image ? `${import.meta.env.VITE_API_URL.replace('/api', '')}${teacher.image}` : '');
+   const [preview, setPreview] = useState(teacher?.image ? `${(import.meta.env.VITE_API_URL || 'https://school-backend-community-development.onrender.com/api').replace('/api', '')}${teacher.image}` : '');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

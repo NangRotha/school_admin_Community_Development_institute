@@ -21,8 +21,8 @@ const Sidebar = () => {
     { path: '/events', icon: FiCalendar, label: t('events') || 'Events' },
     { path: '/gallery', icon: FiImage, label: t('gallery') || 'Gallery' },
     { path: '/results', icon: FiBarChart2, label: t('results') || 'Exam Results' },
-    { path: '/contact-messages', icon: FiMessageSquare, label: 'Contact Messages' },
-    { path: '/about-management', icon: FiInfo, label: 'About Page' },
+    { path: '/contact-messages', icon: FiMessageSquare, label: t('ContactMessages') || 'Contact Messages' },
+    { path: '/about-management', icon: FiInfo, label: t('AboutPage') || 'About Page' },
     { path: '/settings', icon: FiSettings, label: t('settings') || 'Settings' },
     { path: '/profile', icon: FiUser, label: t('profile') || 'Profile' },
   ];

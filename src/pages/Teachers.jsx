@@ -96,9 +96,9 @@ const Teachers = () => {
                   <td className="table-cell">{teacher.id}</td>
                   <td className="table-cell">
                     <div className="flex items-center space-x-3">
-                      {teacher.image && (
-                        <img src={`${import.meta.env.VITE_API_URL.replace('/api', '')}${teacher.image}`} alt={teacher.name} className="w-8 h-8 rounded-full object-cover" />
-                      )}
+                     {teacher.image && (
+                       <img src={`${(import.meta.env.VITE_API_URL || 'https://school-backend-community-development.onrender.com/api').replace('/api', '')}${teacher.image}`} alt={teacher.name} className="w-8 h-8 rounded-full object-cover" />
+                     )}
                       <span className="font-medium">{teacher.name}</span>
                     </div>
                   </td>

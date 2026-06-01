@@ -156,14 +156,14 @@ const Gallery = () => {
           {gallery.map((item) => (
             <div key={item.id} className="card overflow-hidden group hover:shadow-lg transition-all duration-300">
               <div className="relative h-64 bg-gray-100">
-                <img 
-                  src={`${import.meta.env.VITE_API_URL.replace('/api', '')}${item.image_url}`} 
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.src = 'https://via.placeholder.com/400x300?text=No+Image';
-                  }}
-                />
+                 <img 
+                   src={`${(import.meta.env.VITE_API_URL || 'https://school-backend-community-development.onrender.com/api').replace('/api', '')}${item.image_url}`} 
+                   alt={item.title}
+                   className="w-full h-full object-cover"
+                   onError={(e) => {
+                     e.target.src = 'https://via.placeholder.com/400x300?text=No+Image';
+                   }}
+                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <button
                     onClick={() => handleDelete(item.id)}
@@ -269,15 +269,15 @@ const Gallery = () => {
                       />
                     </label>
                     
-                    {formData.image_url && (
-                      <div className="mt-4">
-                        <img 
-                          src={`${import.meta.env.VITE_API_URL.replace('/api', '')}${formData.image_url}`} 
-                          alt="Preview" 
-                          className="w-32 h-32 object-cover rounded-lg"
-                        />
-                      </div>
-                    )}
+                     {formData.image_url && (
+                       <div className="mt-4">
+                         <img 
+                           src={`${(import.meta.env.VITE_API_URL || 'https://school-backend-community-development.onrender.com/api').replace('/api', '')}${formData.image_url}`} 
+                           alt="Preview" 
+                           className="w-32 h-32 object-cover rounded-lg"
+                         />
+                       </div>
+                     )}
                   </div>
                 </div>
               </div>

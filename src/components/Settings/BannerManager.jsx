@@ -107,11 +107,11 @@ const BannerManager = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {banners.map((banner) => (
           <div key={banner.id} className="card overflow-hidden">
-            {banner.is_video ? (
-              <video src={`${import.meta.env.VITE_API_URL.replace('/api', '')}${banner.video_url}`} className="w-full h-48 object-cover" controls />
-            ) : (
-              <img src={`${import.meta.env.VITE_API_URL.replace('/api', '')}${banner.image_url}`} alt={banner.title} className="w-full h-48 object-cover" />
-            )}
+             {banner.is_video ? (
+               <video src={`${(import.meta.env.VITE_API_URL || 'https://school-backend-community-development.onrender.com/api').replace('/api', '')}${banner.video_url}`} className="w-full h-48 object-cover" controls />
+             ) : (
+               <img src={`${(import.meta.env.VITE_API_URL || 'https://school-backend-community-development.onrender.com/api').replace('/api', '')}${banner.image_url}`} alt={banner.title} className="w-full h-48 object-cover" />
+             )}
             <div className="p-4">
               <h3 className="font-semibold text-gray-900">{banner.title}</h3>
               <div className="flex justify-end space-x-2 mt-4">
@@ -161,9 +161,9 @@ const BannerManager = () => {
                   onChange={handleImageChange}
                   className="input-field"
                 />
-                {formData.image_url && (
-                  <img src={`${import.meta.env.VITE_API_URL.replace('/api', '')}${formData.image_url}`} alt="Preview" className="mt-2 w-32 h-32 object-cover rounded" />
-                )}
+                 {formData.image_url && (
+                   <img src={`${(import.meta.env.VITE_API_URL || 'https://school-backend-community-development.onrender.com/api').replace('/api', '')}${formData.image_url}`} alt="Preview" className="mt-2 w-32 h-32 object-cover rounded" />
+                 )}
               </div>
               
               <div>

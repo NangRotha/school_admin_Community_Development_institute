@@ -192,16 +192,16 @@ const News = () => {
               <div key={item.id} className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
                 {/* Image Gallery */}
                 <div className="relative h-48 bg-gray-100">
-                  {item.images && item.images.length > 0 ? (
-                    <img 
-                      src={`${import.meta.env.VITE_API_URL.replace('/api', '')}${item.images[0].image_url}`} 
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.src = 'https://via.placeholder.com/400x300?text=No+Image';
-                      }}
-                    />
-                  ) : (
+                   {item.images && item.images.length > 0 ? (
+                     <img 
+                       src={`${(import.meta.env.VITE_API_URL || 'https://school-backend-community-development.onrender.com/api').replace('/api', '')}${item.images[0].image_url}`} 
+                       alt={item.title}
+                       className="w-full h-full object-cover"
+                       onError={(e) => {
+                         e.target.src = 'https://via.placeholder.com/400x300?text=No+Image';
+                       }}
+                     />
+                   ) : (
                     <div className="flex items-center justify-center h-full">
                       <FiImage className="w-12 h-12 text-gray-400" />
                     </div>
@@ -331,14 +331,14 @@ const News = () => {
                       <div className="grid grid-cols-4 gap-3">
                         {formData.images.map((img, idx) => (
                           <div key={idx} className="relative group">
-                            <img 
-                              src={`${import.meta.env.VITE_API_URL.replace('/api', '')}${img}`} 
-                              alt={`Preview ${idx + 1}`}
-                              className="w-full h-24 object-cover rounded-lg"
-                              onError={(e) => {
-                                e.target.src = 'https://via.placeholder.com/100x100?text=Error';
-                              }}
-                            />
+                             <img 
+                               src={`${(import.meta.env.VITE_API_URL || 'https://school-backend-community-development.onrender.com/api').replace('/api', '')}${img}`} 
+                               alt={`Preview ${idx + 1}`}
+                               className="w-full h-24 object-cover rounded-lg"
+                               onError={(e) => {
+                                 e.target.src = 'https://via.placeholder.com/100x100?text=Error';
+                               }}
+                             />
                             <button
                               type="button"
                               onClick={() => removeImage(idx)}
