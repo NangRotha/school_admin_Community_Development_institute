@@ -19,11 +19,6 @@
     {
       "src": "/uploads/(.*)",
       "dest": "https://school-backend-community-development.onrender.com/uploads/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/",
-      "status": 200
     }
   ],
   "rewrites": [
